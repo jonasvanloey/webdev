@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'KabelBlack';
+    src: url('../fonts/KabelBlack.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-image: url("../images/carapatrn.png");
+    background-size:     cover;
+}
+h1{
+    font-family: "Arial Black" !important;
+}
+.corner-ribbon{
+    width: 1100px;
+    background: #9e8843;
+    position: relative;
+    height: 150px;
+    left: -50px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: white;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    z-index: 2;
+
+}
+.red{
+    width: 1100px;
+    background: #f9000a;
+    position: relative;
+    height: 100px;
+    left: -20px;
+    top:25px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: white;
+
+    border: 5px solid white;
+    outline: 2px solid #f9000a;
+}
+
+/* Custom styles */
+
+.corner-ribbon.sticky{
+    position: fixed;
+}
+
+.corner-ribbon.shadow{
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* Different positions */
+
+.corner-ribbon.top-left{
+    top: 250px;
+    left: -220px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.block{
+    background-color: #9e8843;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 3px rgba(0,0,0,.5);
+    z-index: 1;
+    margin-top: 20%;
+
+}
+.block h1{
+   padding:10px;
+    margin:0px;
+}
+.text{
+    background-color: white;
+
+
+}
+.text  p{
+    width: 80%;
+    margin: auto;
+    margin: auto;
+    padding:15px;
+}
+.btn-cara{
+    position: relative;
+    background-color:#f9000a;
+    border: 5px solid white !important;
+    outline: 2px solid #f9000a;
+    border-radius: 0px !important;
+    z-index: 1 !important;
+    padding:20px 30px !important;
+    color: white;
+    font-family:"Arial Black";
+    margin: 10px!important;
+}
+.btn-cara:hover{
+    cursor: pointer;
+    position: relative;
+    background-color:white;
+    border: 5px solid #f9000a !important;
+    outline: 2px solid white;
+    border-radius: 0px !important;
+    z-index: 1 !important;
+    padding:20px 30px !important;
+    color: #f9000a !important;
+    font-family:"Arial Black";
+    margin: 10px!important;
+}
+.admin-block{
+
+    padding:0 !important;
+}
+.deelnemer-block{
+    text-align: left !important;
+    margin: 5px;
+
+}
+.deelnemer-block p{
+    width: 80%;
+    margin:0 !important;
+    padding:0 !important;
+}
