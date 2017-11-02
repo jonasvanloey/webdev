@@ -39,7 +39,7 @@ class RegisterController extends Controller
         $competition = DB::table('competitions')->where('Active', '=', '1')->get();
         var_dump($competition);
         $reg->competition_id=$competition[0]->id;
-        $reg->upload_id=$id;
+        $reg->uploads_id=$id;
         $reg->save();
 
         return redirect('/');

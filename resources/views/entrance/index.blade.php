@@ -10,14 +10,19 @@
             @else
                <h2 class="cara-letters">Er is momenteel geen wedstrijd actief</h2>
             @endif
-            @auth
+            @if($ad)
                 <a href="admin">naar admin panel</a>
-                @endauth
+                @endif
 
 
         </div>
 
  </div>
+    <div class="block">
+        <div class="text">
+            <a href="/stem" class="btn btn-cara">Stem op de inzendingen</a>
+        </div>
+    </div>
 
     <div class="block">
         <h1>vorige winnaars</h1>

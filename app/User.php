@@ -32,6 +32,9 @@ class User extends Authenticatable
     public function competition(){
         return $this->belongsToMany(competition::class,'user_id','id');
     }
+    public function vote(){
+        return $this->hasMany(vote::class);
+    }
     public function is($roleName)
     {
         foreach ($this->roles()->get() as $role)

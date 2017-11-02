@@ -12,6 +12,9 @@ class uploads extends Model
         return $this->hasOne(registration::class);
     }
     public $timestamps = false;
+    public function vote(){
+        return $this->hasMany(vote::class);
+    }
 
     //
 }

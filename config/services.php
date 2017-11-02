@@ -34,5 +34,11 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+//    'facebook' => [
+//        'client_id' => '2008705159405824',
+//        'client_secret' => 'd986a80ae871badf650b799a7c8cfa4d',
+//        'redirect' => 'http://hello.int/login/facebook/callback'
+//    ],
+
 
 ];

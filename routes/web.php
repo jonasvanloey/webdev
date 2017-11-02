@@ -13,16 +13,20 @@
 
 Route::get('/', 'IndexController@show');
 
+Route::get('/stem', 'CompetitionController@voteindex');
+
 Route::get('/wedstrijd', 'CompetitionController@show');
 Route::get('/wedstrijd/registreer', 'RegisterController@show');
 Route::post('/wedstrijd/registreer/store', 'RegisterController@store');
 
 Route::post('/wedstrijd/store', 'UploadController@store');
+Route::get('/vote/{id}', 'CompetitionController@vote' );
 
-
+//Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+//Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
@@ -34,4 +38,6 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
     Route::get('/excel', 'AdminController@excel' );
 
 });
+
+
 
