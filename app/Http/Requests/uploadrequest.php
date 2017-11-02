@@ -24,9 +24,10 @@ class uploadrequest extends FormRequest
     public function rules()
     {
         return [
-
+            'image'=>'required|image|max:2048000',
             'titel'=>'required|max:255',
-            'rede'=>'required'
+            'rede'=>'required|string',
+
             //
         ];
     }

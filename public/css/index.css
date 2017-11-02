@@ -110,6 +110,15 @@ h1{
     font-family:"Arial Black";
     margin: 10px!important;
 }
+.gr{
+    background-color:darkgreen;
+    border: 5px solid white !important;
+    outline: 2px solid darkgreen;
+}
+.btn-cara.gr:hover{
+    border: 5px solid darkgreen !important;
+    color: darkgreen !important;
+}
 .admin-block{
 
     padding:0 !important;
@@ -123,4 +132,7 @@ h1{
     width: 80%;
     margin:0 !important;
     padding:0 !important;
+}
+.floatnone{
+    float: none !important;
 }

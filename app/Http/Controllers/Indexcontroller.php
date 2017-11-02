@@ -12,8 +12,9 @@ class Indexcontroller extends Controller
     public function show()
     {
         $competition= DB::table('competitions')->where('Active','=','1')->get();
+
         $comp=true;
-        if($competition===null){
+        if(count($competition)===0){
             $comp=false;
         }
         $winnaars=winnaar::with('registration')->get()->values()->all();

@@ -21,10 +21,11 @@ class Registration extends Migration
             $table->string('stad');
             $table->string('postcode');
             $table->softDeletes();
+            $table->string('ip_address', 45);
             $table->string('email')->unique();
             $table->integer('upload_id')->unsigned();
-//            $table->integer('competition_id')->unsigned();
-//            $table->foreign("competition_id")->references("id")->on('competition')->onDelete('cascade');
+            $table->integer('competition_id')->unsigned();
+            $table->foreign("competition_id")->references("id")->on('competitions')->onDelete('cascade');
             $table->foreign("upload_id")->references("id")->on('uploads')->onDelete('cascade');
         });
         //

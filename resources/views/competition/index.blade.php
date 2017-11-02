@@ -10,19 +10,19 @@
                 {!! Form::token() !!}
                     <div class="form-group">
                         {!! Form::label('image','Upload hier een foto van jou meest originele manier om cara te drinken.',['class'=>'control-label']) !!}
-                        {!! Form::file('image') !!}
+                        {!! Form::file('image',['required','image']) !!}
                        </div>
                     <div class="form-group">
                         {!! Form::label('titel', 'geef deze manier van drinken een naam.',['class'=> 'control-label'])  !!}
                         <div class=>
-                            {!! Form::text('titel', null, ['class' => 'form-control']) !!}
+                            {!! Form::text('titel', null, ['class' => 'form-control','required']) !!}
                         </div>
 
                     </div>
                     <div class="form-group">
                         {!! Form::label('rede', 'Vul hier in waarom deze manier van drinken zo uniek is',['class'=> ' control-label'])  !!}
                         <div class="">
-                            {!! Form::textarea('rede', null,['size' => '90x3', 'class' => 'form-control']) !!}
+                            {!! Form::textarea('rede', null,['size' => '90x3', 'class' => 'form-control','required','string']) !!}
                         </div>
 
                     </div>

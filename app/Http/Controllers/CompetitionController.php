@@ -13,7 +13,7 @@ class CompetitionController extends Controller
     {
         $competition= DB::table('competitions')->where('Active','=','1')->get();
         $comp=true;
-        if($competition===null){
+        if(count($competition)===0){
             $comp=false;
         }
         return view('competition.index',compact('comp'));

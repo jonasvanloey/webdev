@@ -14,4 +14,5 @@ class competition extends Model
         return $this->hasOne(User::class);
     }
     //
+    public $timestamps = false;
 }

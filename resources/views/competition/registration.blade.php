@@ -10,32 +10,32 @@
                     {!! Form::token() !!}
                     <div class="form-group">
                         {!! Form::label('name', 'Naam',['class'=> 'control-label'])  !!}
-                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('name', null, ['class' => 'form-control','required','string']) !!}
 
                     </div>
                     <div class="form-group">
                         {!! Form::label('straat', 'straat',['class'=> 'control-label'])  !!}
-                            {!! Form::text('straat', null, ['class' => 'form-control']) !!}
+                            {!! Form::text('straat', null, ['class' => 'form-control','required','string']) !!}
 
                     </div>
                     <div class="form-group">
                         {!! Form::label('nummer', 'nummer',['class'=> 'control-label'])  !!}
-                            {!! Form::text('nummer', null, ['class' => 'form-control']) !!}
+                            {!! Form::text('nummer', null, ['class' => 'form-control','required']) !!}
 
                     </div>
                     <div class="form-group">
                         {!! Form::label('stad', 'stad',['class'=> 'control-label'])  !!}
-                        {!! Form::text('stad', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('stad', null, ['class' => 'form-control','required','string']) !!}
 
                     </div>
                     <div class="form-group">
                         {!! Form::label('postcode', 'postcode',['class'=> 'control-label'])  !!}
-                        {!! Form::text('postcode', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('postcode', null, ['class' => 'form-control','required','numeric']) !!}
 
                     </div>
                     <div class="form-group">
                         {!! Form::label('email', 'email',['class'=> 'control-label'])  !!}
-                        {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('email', null, ['class' => 'form-control','required','email']) !!}
 
                     </div>
                     <div class="form-group">
@@ -49,6 +49,7 @@
                 @else
             <p>er is momenteel geen wedstrijd actief.</p>
                 @endif
+
         </div>
 
     </div>

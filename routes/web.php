@@ -28,7 +28,10 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
     Route::get('', 'AdminController@show' );
     Route::get('/deelnemer/{id}', 'AdminController@user' );
+    Route::get('/wedstrijd', 'AdminController@cpanel' );
+    Route::post('/wedstrijd/start', 'AdminController@start' );
+    Route::get('/deelnemer/{id}/del', 'AdminController@userdelete' );
+    Route::get('/excel', 'AdminController@excel' );
 
 });
 
-Route::get('admin/deelnemer/{id}/del', 'AdminController@userdelete' );

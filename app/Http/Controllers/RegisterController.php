@@ -15,7 +15,7 @@ class RegisterController extends Controller
         if($id) {
             $competition = DB::table('competitions')->where('Active', '=', '1')->get();
             $comp = true;
-            if ($competition === null) {
+            if (count($competition)===0) {
                 $comp = false;
             }
             return view('competition.registration', compact('comp'));
@@ -27,15 +27,18 @@ class RegisterController extends Controller
     }
     public function store(Request $request,RegisterRequest $rrq){
         $id=$request->session()->pull('id');
-        var_dump($id);
+
         $reg = new registration();
         $reg->name = $rrq->name;
         $reg->straat = $rrq->straat;
         $reg->nummer = $rrq->nummer;
         $reg->stad = $rrq->stad;
         $reg->postcode = $rrq->postcode;
+        $reg->ip_address = $request->getClientIp();
         $reg->email = $rrq->email;
-//        $reg->competition_id=1;
+        $competition = DB::table('competitions')->where('Active', '=', '1')->get();
+        var_dump($competition);
+        $reg->competition_id=$competition[0]->id;
         $reg->upload_id=$id;
         $reg->save();
 

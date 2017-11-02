@@ -15,10 +15,11 @@ class Competition extends Migration
     {
         Schema::create('competitions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->string('titel');
             $table->date('start_date');
             $table->date('end_date');
+            $table->string('email');
             $table->boolean('Active')->default(1);
             $table->foreign("user_id")->references("id")->on('users')->onDelete('cascade');
         });

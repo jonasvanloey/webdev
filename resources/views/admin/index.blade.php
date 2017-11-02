@@ -24,7 +24,6 @@
                 </table>
 
 
-                <a href="admin">voeg een verantwoordelijke toe</a>
             </div>
             <div class="col-xs-5  text admin-block">
                 <h3>Winnaars</h3>
@@ -65,8 +64,12 @@
             </div>
         </div>
 
-
-
+        @if(!$comp)
+        <a href="/admin/wedstrijd" class="btn btn-cara">Start de wedstrijden</a>
+            @else
+        <p>de wedstrijd is gestart</p>
+            @endif
+        <a href="/admin/excel" class="btn btn-cara gr">download excel</a>
     </div>
 
 </div>
