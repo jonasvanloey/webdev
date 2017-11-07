@@ -139,3 +139,11 @@ h1{
 .floatnone{
     float: none !important;
 }
+@media screen and (max-width: 1800px){
+    .corner-ribbon{
+        z-index:-1 !important;
+    }
+    .red{
+        color:#f9000a;
+    }
+}

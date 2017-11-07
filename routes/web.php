@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@show');
+Route::get('/', 'Indexcontroller@show');
 
 Route::get('/stem', 'CompetitionController@voteindex');
 
@@ -22,7 +22,7 @@ Route::post('/wedstrijd/registreer/store', 'RegisterController@store');
 Route::post('/wedstrijd/store', 'UploadController@store');
 Route::get('/vote/{id}', 'CompetitionController@vote' );
 
-Route::get('mail', 'IndexController@mail');
+
 
 //Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 //Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

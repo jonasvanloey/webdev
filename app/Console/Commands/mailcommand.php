@@ -57,10 +57,9 @@ class mailcommand extends Command
             $activezone=DB::table('competitions')->where('Active','=',1)->get();
             $message->from('no-reply@hello.int','carapils competitie');
             $message->to($activezone[0]->email);
-            $today = date('Y-m-d');
-            $url = Storage::url('overzicht.csv');
-            print_r($url);
-            $message->attach(storage_path('app/public/overzicht.csv'),[
+            $today = date('Y-m-d_H-i');
+
+            $message->attach(storage_path('app/public/overzicht'.$today.'.csv'),[
                 'as' => 'overzicht'.$today.'.csv'
             ]);
             $message->subject('overzicht');
@@ -70,9 +69,10 @@ class mailcommand extends Command
 
         $activezone=DB::table('competitions')->where('Active','=',1)->get();
         $activezoneid=$activezone[0]->id;
+        $today=date('Y-m-d_H-i');
         $type='csv';
         $create_excel=registration::select('name','straat','nummer','stad','postcode','email','ip_address')->where('competition_id','=',$activezoneid)->orderBy('id','desc')->get()->toArray();
-        $excelFile = Excel::create('overzicht', function($excel) use ($create_excel) {
+        $excelFile = Excel::create('overzicht'.$today, function($excel) use ($create_excel) {
             $excel->sheet('mySheet', function($sheet) use ($create_excel)
             {
                 $sheet->fromArray($create_excel);
