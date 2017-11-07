@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Console;
-
+use App\Console\Commands;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 
 class Kernel extends ConsoleKernel
 {
@@ -14,6 +16,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Commands\competitioncommand::class,
+        Commands\mailcommand::class,
+
     ];
 
     /**
@@ -26,6 +31,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('competition-check')->daily();
+        $schedule->command('send-mail')->everyMinute();
     }
 
     /**

@@ -25,7 +25,10 @@ class AdminController extends Controller
         }
         $users=DB::table('users')->get();
         $winnaars=winnaar::with('registration')->get()->values()->all();
-        $deelnemers = registration::with('upload')->get()->values()->all();
+        $deelnemers =  uploads::whereHas('registration',function ($query){
+            $competition= DB::table('competitions')->where('Active','=','1')->get();
+            $query->where('competition_id','=',$competition[0]->id);
+        })->has('vote')->get()->values()->all();
 //        var_dump($winnaars);
 
         return view('admin.index', compact('users','winnaars','deelnemers','comp'));

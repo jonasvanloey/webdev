@@ -11,5 +11,6 @@ class winnaar extends Model
     public function registration(){
         return $this->belongsTo(registration::class);
     }
+    public $timestamps = false;
     //
 }

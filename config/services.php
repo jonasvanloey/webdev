@@ -34,6 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'mailgun' => array(
+        'domain' => 'hello.int',
+        'secret' => 'key-3ab308353e759fb02a6c4a0678d2260e',
+    ),
 //    'facebook' => [
 //        'client_id' => '2008705159405824',
 //        'client_secret' => 'd986a80ae871badf650b799a7c8cfa4d',

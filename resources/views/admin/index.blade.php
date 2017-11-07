@@ -51,13 +51,13 @@
                     <div class="col-xs-12 deelnemer-block">
                         <div class="col-xs-4">
 
-                            <img src="{{ asset('storage/images/' .$d->upload->img_path) }}" alt="" style="max-width: 80%">
+                            <img src="{{ asset('storage/images/' .$d->img_path) }}" alt="" style="max-width: 80%">
                         </div>
                         <div class="col-xs-8 .deelnemer-block">
-                            <h4>{{$d->upload->titel}}</h4>
-                            <p>{{$d->upload->rede}}</p>
-                            <p>{{$d->name}}</p>
-                            <a href="admin/deelnemer/{{$d->id}}" class="btn btn-primary">bekijk de deelnemer</a>
+                            <h4>{{$d->titel}}</h4>
+                            <p>{{$d->rede}}</p>
+                            <p>{{$d->registration->name}}</p>
+                            <a href="admin/deelnemer/{{$d->registration->id}}" class="btn btn-primary">bekijk de deelnemer</a>
                         </div>
                     </div>
                     @endforeach
