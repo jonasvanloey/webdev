@@ -28,5 +28,19 @@
             </div>
         </div>
     </div>
+    @if(!Auth::guest())
+    <div class="top-right">
+        <a class='btn btn-cara high' href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+            Logout
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+    </div>
+        @else
+        <a href="/login" class="btn btn-cara high">login</a>
+        @endif
     </body>
 </html>

@@ -139,6 +139,14 @@ h1{
 .floatnone{
     float: none !important;
 }
+.high{
+    z-index:3 !important;
+    position:fixed;
+}
+.high:hover{
+    z-index:3 !important;
+    position:fixed;
+}
 @media screen and (max-width: 1800px){
     .corner-ribbon{
         z-index:-1 !important;
