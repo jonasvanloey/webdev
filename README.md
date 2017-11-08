@@ -11,33 +11,38 @@ composer
 ### Open de cli 
 
 ### Ga naar de map waar je het project wilt hebben
+
 ```php
 Cd route-to-map
 ```
 
 ### Haal het project af github
-
+```php
 Git clone https://github.com/jonasvanloey/webdev.git
+```
 
 ### Installeer de composer in de map van het project
-
+```php
 Cd map-vh-project
-
+```
+```php
 Composer install
+```
 
 ### maak een databank aan
 
 Gegevens in .env bestand aanpassen
 
 ### Voer migrations uit
-
+```php
 Php artisan migrate
-
+```
 ### Setup databank & wedstrijd
 
 Voer de roles in in de databank
-
+```php
 Php artisan db:seed	
+```
 
 ### registreer je op de website
 
@@ -48,8 +53,9 @@ ga naar het admin panel en druk op start de wedstrijd
 geef de periode in die elke wedstrijd moet duren en het email adres van de verantwoordelijke.
 
 ### Maak een cronjob:
-
+```php
 * * * * * php /pad/naar/workspace/artisan schedule:run >> /dev/null 2>&1
+```
 
 ## Functionaliteiten
 
