@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Console\Commands\competitioncommand;
 use App\uploads;
 use App\vote;
 use Illuminate\Support\Facades\Auth;
@@ -23,11 +24,13 @@ class CompetitionController extends Controller
     }
     public function voteindex(){
         if (!Auth::guest()){
-
-            $deelnemers = uploads::whereHas('registration',function ($query){
-                $competition= DB::table('competitions')->where('Active','=','1')->get();
-                $query->where('competition_id','=',$competition[0]->id);
-            })->has('vote')->get()->values()->all();
+            $competition= DB::table('competitions')->where('Active','=',1)->get();
+            $cid=$competition[0]->id;
+            $deelnemers = uploads::whereHas('registration',function ($query) use ($cid){
+                 $query->where('competition_id','=',$cid);
+            })->with('vote')->get()->values()->all();
+//            $upload = uploads::has('registration')->get()->values()->all();
+//            var_dump($deelnemers);
             return view('competition.overview', compact('deelnemers'));
         }
         else{
@@ -39,7 +42,8 @@ class CompetitionController extends Controller
         if (!Auth::guest()){
             $userid=Auth::id();
             $voted=DB::table('votes')->where('user_id','=',$userid,'AND','uploads_id','=',$id)->get();
-            if($voted === null){
+
+            if(count($voted) === 0){
                 $v = new vote();
                 $v->uploads_id=$id;
                 $v->user_id=Auth::id();

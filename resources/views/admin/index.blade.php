@@ -14,12 +14,14 @@
                     <th>rol</th>
                     </thead>
                     <tbody >
-                    @foreach($users as $user)
-                        <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->role_id}}</td>
-                        </tr>
-                    @endforeach
+                    @if($comp)
+                        @foreach($users as $user)
+                            <tr>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->role_id}}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
 
@@ -33,12 +35,14 @@
                     <th>competitie nr.</th>
                     </thead>
                     <tbody >
-                    @foreach($winnaars as $w)
-                        <tr>
-                            <td>{{$w->registration->name}}</td>
-                            <td>{{$w->id}}</td>
-                        </tr>
-                    @endforeach
+                    @if($comp)
+                        @foreach($winnaars as $w)
+                            <tr>
+                                <td>{{$w->registration->name}}</td>
+                                <td>{{$w->id}}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
 
@@ -47,20 +51,22 @@
         <div class="row">
             <div class="col-xs-12">
                 <h3>Deelnemers</h3>
-                @foreach($deelnemers as $d)
-                    <div class="col-xs-12 deelnemer-block">
-                        <div class="col-xs-4">
+                @if($comp)
+                    @foreach($deelnemers as $d)
+                        <div class="col-xs-12 deelnemer-block">
+                            <div class="col-xs-4">
 
-                            <img src="{{ asset('storage/images/' .$d->img_path) }}" alt="" style="max-width: 80%">
+                                <img src="{{ asset('storage/images/' .$d->img_path) }}" alt="" style="max-width: 80%">
+                            </div>
+                            <div class="col-xs-8 .deelnemer-block">
+                                <h4>{{$d->titel}}</h4>
+                                <p>{{$d->rede}}</p>
+                                <p>{{$d->registration->name}}</p>
+                                <a href="admin/deelnemer/{{$d->registration->id}}" class="btn btn-primary">bekijk de deelnemer</a>
+                            </div>
                         </div>
-                        <div class="col-xs-8 .deelnemer-block">
-                            <h4>{{$d->titel}}</h4>
-                            <p>{{$d->rede}}</p>
-                            <p>{{$d->registration->name}}</p>
-                            <a href="admin/deelnemer/{{$d->registration->id}}" class="btn btn-primary">bekijk de deelnemer</a>
-                        </div>
-                    </div>
                     @endforeach
+                @endif
             </div>
         </div>
 
