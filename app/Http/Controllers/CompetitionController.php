@@ -29,8 +29,6 @@ class CompetitionController extends Controller
             $deelnemers = uploads::whereHas('registration',function ($query) use ($cid){
                  $query->where('competition_id','=',$cid);
             })->with('vote')->get()->values()->all();
-//            $upload = uploads::has('registration')->get()->values()->all();
-//            var_dump($deelnemers);
             return view('competition.overview', compact('deelnemers'));
         }
         else{
@@ -40,8 +38,9 @@ class CompetitionController extends Controller
     }
     public function vote($id){
         if (!Auth::guest()){
+
             $userid=Auth::id();
-            $voted=DB::table('votes')->where('user_id','=',$userid,'AND','uploads_id','=',$id)->get();
+            $voted=DB::table('votes')->where('user_id','=',$userid)->where('uploads_id','=',$id)->get();
 
             if(count($voted) === 0){
                 $v = new vote();

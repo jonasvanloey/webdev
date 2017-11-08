@@ -22,8 +22,7 @@ class UploadController extends Controller
         $id = $up->id;
         $request->session()->put('id',$id);
         $request->session()->put('fromU',true);
-//        var_dump($request->session()->all());
-//        var_dump($id);
+
 
         return redirect('wedstrijd/registreer');
     }

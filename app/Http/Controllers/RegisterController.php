@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     public function show(Request $request){
         $id=$request->session()->pull('fromU');
-        var_dump($id);
+
         if($id) {
             $competition = DB::table('competitions')->where('Active', '=', '1')->get();
             $comp = true;
@@ -37,7 +37,6 @@ class RegisterController extends Controller
         $reg->ip_address = $request->getClientIp();
         $reg->email = $rrq->email;
         $competition = DB::table('competitions')->where('Active', '=', '1')->get();
-        var_dump($competition);
         $reg->competition_id=$competition[0]->id;
         $reg->uploads_id=$id;
         $reg->save();

@@ -32,7 +32,6 @@ class AdminController extends Controller
                     $competition = DB::table('competitions')->where('Active', '=', '1')->get();
                     $query->where('competition_id', '=', $competition[0]->id);
                 })->with('vote')->get()->values()->all();
-                //        var_dump($winnaars);
             }
             return view('admin.index', compact('users','winnaars','deelnemers','comp'));
             }
