@@ -17,7 +17,7 @@ class Uploads extends Migration
             $table->increments('id');
             $table->string('img_path');
             $table->string('titel');
-            $table->string('rede');
+            $table->longText('rede');
 
         });
         //
