@@ -11,8 +11,9 @@ composer
 ### Open de cli 
 
 ### Ga naar de map waar je het project wilt hebben
-
+```php
 Cd route-to-map
+```
 
 ### Haal het project af github
 
